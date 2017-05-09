@@ -656,6 +656,12 @@ function clickArea() {
 		document.getElementById('map-level2-input').value = myVal;
 		valueObj.level2 = myVal;
 		console.log(valueObj.level2);
+
+		try {
+	        webkit.messageHandlers.callbackHandler.postMessage("Hello from JavaScript");
+	    } catch(err) {
+	        console.log('The native context does not exist yet');
+	    }
 	}
 
 	for (var i = 0; i < mapLevel2.length; i++) {
