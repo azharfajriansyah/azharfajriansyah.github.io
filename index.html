@@ -658,7 +658,7 @@ function clickArea() {
 		console.log(valueObj.level2);
 
 		try {
-	        webkit.messageHandlers.callbackHandler.postMessage("Hello from JavaScript");
+	        webkit.messageHandlers.callbackHandler.postMessage(valueObj.level2);
 	    } catch(err) {
 	        console.log('The native context does not exist yet');
 	    }
