@@ -16,11 +16,11 @@
             };
             var openApp = function() {
                 window.location.href = 'app://femaledaily.com/article/131710';
+                setTimeout(fallbackToStore, 1000);
             };
 
             function onButtonTap() {
                 openApp();
-                setTimeout(fallbackToStore, 1000);
             };
     </script>
 </html>
