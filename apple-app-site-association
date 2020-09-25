@@ -3,10 +3,6 @@
         "apps": [],
         "details": [
             {
-                "appIDs": ["RUW882EMTM.com.femaledaily.fdbr", "RUW882EMTM.com.femaledaily.fdbr-dev"],
-                "paths": ["/humanbody/*"]
-            },
-            {
                 "appID": "RUW882EMTM.com.femaledaily.fdbr",
                 "paths": ["/humanbody/*"]
             },
