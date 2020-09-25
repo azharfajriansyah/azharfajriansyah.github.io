@@ -11,7 +11,7 @@
                 "paths": ["/humanbody/*"]
             },
             {
-                "appIDs": "RUW882EMTM.com.femaledaily.fdbr-dev",
+                "appID": "RUW882EMTM.com.femaledaily.fdbr-dev",
                 "paths": ["/humanbody/*"]
             }
         ]
