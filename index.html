@@ -27,9 +27,14 @@
                 setTimeout(fallbackToStore, 1000);
             };
 
+            var openSomeURL = function() {
+                window.location.href = "http://api-dev.femaledaily.net/app/v1/allo/auth/callback"
+            }
+
             function onButtonTap() {
                 //openApp();
-                alert("Button tapped");
+                //alert("Button tapped");
+                openSomeURL();
             };
     </script>
 </html>
