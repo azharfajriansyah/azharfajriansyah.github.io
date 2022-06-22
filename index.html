@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Test Deep Link Android</title>
+        <title>Test Deep Link</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
         <meta name="description" content="">
 
         <body>
-            <h1>Test Allo flow</h1>
+            <h1>Test DeepLink</h1>
             <br>
             <p>=============================================</p>
-            <button onclick="onButtonTap()">AUTHENTICATE</button>
+            <button onclick="onButtonTap()">Open</button>
             <p>=============================================</p>
         </body>
 
@@ -24,7 +24,7 @@
             };
 
             var openSomeURL = function() {
-                window.location.href = "http://api-dev.femaledaily.net/app/v1/allo/auth/callback"
+                window.location.href = "com.femaledaily.fdbr://www.femaledaily.net/ticket/scanqr?code=6F1618D64BB13"
             }
 
             function onButtonTap() {
