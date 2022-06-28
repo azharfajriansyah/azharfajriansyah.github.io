@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
         <meta name="description" content="">
 
-        <body>
+        <body onload="appNavigate()">
             <h1>Test DeepLink</h1>
             <br>
             <p>=============================================</p>
@@ -15,22 +15,57 @@
         </body>
 
     <script>
-            var fallbackToStore = function() {
-                window.location.href = 'https://play.google.com/store/apps/details?id=com.fdbr.android&hl=en';
-            };
-            var openApp = function() {
-                window.location.href = 'app://femaledaily.com/article/131710';
-                setTimeout(fallbackToStore, 1000);
-            };
+        /**
+         * Determine the mobile operating system.
+         * This function returns one of 'iOS', 'Android', 'Windows Phone', or 'unknown'.
+         *
+         * @returns {String}
+         */
+        function getMobileOperatingSystem() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-            var openSomeURL = function() {
-                window.location.href = "com.femaledaily.fdbr://www.femaledaily.net/ticket/scanqr?code=6F1618D64BB13"
+            // Windows Phone must come first because its UA also contains "Android"
+            if (/windows phone/i.test(userAgent)) {
+                return "Windows Phone";
             }
 
-            function onButtonTap() {
-                //openApp();
-                //alert("Button tapped");
-                openSomeURL();
-            };
+            if (/android/i.test(userAgent)) {
+                return "Android";
+            }
+
+            // iOS detection from: http://stackoverflow.com/a/9039885/177710
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return "iOS";
+            }
+
+            return "unknown";
+        }
+
+        function appNavigate() {
+            var os = getMobileOperatingSystem()
+            if (os == "Android") {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.fdbr.android&hl=en';
+            } else if (os == "iOS") {
+                window.location.href = 'https://apps.apple.com/id/app/female-daily-beauty-review/id1160742672';
+            }
+        }
+
+        var fallbackToStore = function() {
+            window.location.href = 'https://play.google.com/store/apps/details?id=com.fdbr.android&hl=en';
+        };
+        var openApp = function() {
+            window.location.href = 'app://femaledaily.com/article/131710';
+            setTimeout(fallbackToStore, 1000);
+        };
+
+        var openSomeURL = function() {
+            window.location.href = "com.femaledaily.fdbr://www.femaledaily.net/ticket/scanqr?code=6F1618D64BB13"
+        }
+
+        function onButtonTap() {
+            //openApp();
+            //alert("Button tapped");
+            openSomeURL();
+        };
     </script>
 </html>
