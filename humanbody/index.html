@@ -660,7 +660,7 @@ function clickArea() {
 		try {
 	        webkit.messageHandlers.callbackHandler.postMessage(valueObj.level2);
 	    } catch(err) {
-	        console.log('The native context does not exist yet');
+			alert('The native context does not exist yet');
 	    }
 	}
 
